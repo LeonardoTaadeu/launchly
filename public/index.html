@@ -132,5 +132,34 @@ document.getElementById('prevTestimonial').addEventListener('click',()=>goTo(cur
 document.getElementById('nextTestimonial').addEventListener('click',()=>goTo(current+1));
 restartAutoplay();
 </script>
+
+<script>
+  const formulario = document.getElementById("orcamentoForm");
+
+  formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const setor = document.getElementById("setor").value;
+
+    const numeroWhatsApp = "5511977400927";
+
+    const mensagem = `
+Olá! Meu nome é ${nome} e gostaria de solicitar um orçamento para uma Landing Page.
+
+Segmento: ${setor}
+E-mail: ${email}
+Telefone: ${telefone}
+
+Vim pelo site e gostaria de conversar sobre o projeto.
+    `;
+
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, "_blank");
+  });
+</script>
 </body>
 </html>
